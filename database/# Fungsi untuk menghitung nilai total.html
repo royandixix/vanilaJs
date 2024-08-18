@@ -1,0 +1,31 @@
+# Fungsi untuk menghitung nilai total
+def hitung_nilai_total(nilai_absen, nilai_tugas, nilai_uts, nilai_uas):
+    return (0.15 * nilai_absen) + (0.25 * nilai_tugas) + (0.20 * nilai_uts) + (0.40 * nilai_uas)
+
+# Fungsi untuk input data dari pengguna
+def input_data():
+    # Menginput data
+    stambuk = input("Masukkan Stambuk: ")
+    nama = input("Masukkan Nama: ")
+    try:
+        nilai_absen = float(input("Masukkan Nilai Absensi: "))
+        nilai_tugas = float(input("Masukkan Nilai Tugas: "))
+        nilai_quiz = float(input("Masukkan Nilai Quiz: "))
+        nilai_uts = float(input("Masukkan Nilai UTS: "))
+        nilai_uas = float(input("Masukkan Nilai UAS: "))
+    except ValueError:
+        print("Input tidak valid. Mohon masukkan nilai berupa angka.")
+        return
+
+    # Menghitung nilai total
+    nilai_total = hitung_nilai_total(nilai_absen, nilai_tugas, nilai_uts, nilai_uas)
+
+    # Menampilkan hasil
+    print("\nHasil Perhitungan:")
+    print(f"Stambuk     : {stambuk}")
+    print(f"Nama        : {nama}")
+    print(f"Nilai Total : {nilai_total:.2f}")
+
+# Program utama
+if _name_ == "_main_":
+    input_data()
